@@ -1,9 +1,9 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HandleOrders {
 
     private static final double PIZZA_BASE_PRICE = 10.0;
-
     private String[] pizzasOrdered = new String[10];
     private String[] pizzaSizesOrdered = new String[10];
     private String[] sideDishesOrdered = new String[20];
@@ -13,7 +13,19 @@ public class HandleOrders {
     StringBuilder pizzaOrderSummary = new StringBuilder();
 
     Scanner input = new Scanner(System.in);
+    private ArrayList<CustomPizza> customPizzas;
+    public void HandleOrderd(){
+        customPizzas = new ArrayList<>();
+    }
+    public void addCustomPizza(CustomPizza pizza) {
+        customPizzas.add(pizza);
+    }
 
+    public void displayCustomPizzas() {
+        for (CustomPizza pizza : customPizzas) {
+            System.out.println(pizza);
+        }
+    }
     public void takeOrder(){
         String orderAnother = "Y";
         int j= 0;
